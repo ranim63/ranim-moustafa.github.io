@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ranim Moustafa | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: #0f0f1a; color: #ffffff; line-height: 1.6; }
+        nav { background: #1f1f2e; padding: 1em 2em; display: flex; justify-content: space-between; position: fixed; width: 100%; z-index: 10; }
+        nav a { color: #00d1d1; text-decoration: none; margin: 0 15px; font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: #a200ff; }
+
+        header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #6e00ff, #00e1e1);
+            text-align: center;
+            flex-direction: column;
+            padding: 20px;
+            position: relative;
+        }
+
+        header img.profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #fff;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 1em;
+            color: #eee;
+            max-width: 600px;
+        }
+
+        .cv-button {
+            margin-top: 2em;
+            padding: 12px 24px;
+            background-color: #a200ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cv-button:hover {
+            background-color: #a200ff;
+        }
+
+        section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+        h2 { font-size: 2em; margin-bottom: 20px; color: #a200ff; text-align: center; }
+        .card { background: #1c1c2c; padding: 20px; border-radius: 10px; margin: 20px 0; box-shadow: 0 0 15px rgba(0,0,0,0.3); }
+        .card h3 { color: #a200ff; margin-bottom: 10px; }
+        .card p { color: #ccc; }
+
+        footer { background: #1a1a27; text-align: center; padding: 30px; font-size: 0.9em; color: #aaa; }
+        form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input,
+    form textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+    }
+
+    form button {
+      padding: 10px;
+      background-color: #a200ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #a200ff;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div><strong>Ranim Moustafa</strong></div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#Offered Services">Offered Services</a>
+            <a href="#contact">Contact</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            
+        </div>
+    </nav>
+
+    <header>
+        <!-- ✅ Add your image here -->
+        <img src="3.jpg" alt="Ranim Moustafa" class="profile-pic" />
+        
+        <h1>👩‍💻 Ranim Moustafa</h1>
+        <h2>UI/UX Designer | Web Developer | Data Scientist</h2>
+        <p>Creative mind solving real-world problems through clean design & intelligent systems 💻✨</p>
+        <a href="Ranim Moustafa Resume.pdf" download class="cv-button">Download CV</a>
+    </header>
+
+    <section id="about">
+        <h2>About</h2>
+        <div class="card">
+            <p>Creative UI/UX designer and web developer with a strong foundation in data science and AI. Experienced in building full-stack applications and designing intuitive, user-friendly interfaces. Passionate about solving real-world problems through clean design, interactive dashboards, and automation tools.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+            <h3>Alexandria University</h3>
+            <p>Bachelor's Degree in Computing & Data Sciences</p>
+            <p><strong>GPA:</strong> 3.735 | Sep 2021 - Present</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="card">
+            <p><strong>UI/UX Design:</strong> Figma, Wireframing, Prototyping, User Research...</p>
+            <p><strong>Web Development:</strong> HTML, CSS, JS, Flask, React (beginner), Firebase...</p>
+            <p><strong>Data & AI:</strong> Python, SQL, TensorFlow, scikit-learn, NLP...</p>
+            <p><strong>Visualization:</strong> Matplotlib, Plotly, Streamlit, Tableau...</p>
+        </div>
+    </section>
+    <section id="skills">
+        <h2>Soft Skills</h2>
+        <div class="card">
+            <p><strong>Problem Solving, UI/UX Thinking, Time Management, Team Collaboration, Fast Learner, Attention to Detail</strong></p>
+        </div>
+    </section>
+    <section id="Offered Services">
+        <h2>Offered Services</h2>
+        <div class="card">
+            <p><strong>UI/UX Design for mobile/web apps</strong></p>
+            <p><strong>Full-Stack Web Development</strong></p>
+            <p><strong>Data Visualization Dashboards</strong></p>
+            <p><strong>AI & ML Integration</strong></p>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="card">
+            <h3>Animal Rescue App – UI/UX Design</h3>
+            <p>Designed a mobile app to support pet adoption and animal rescue volunteers. The UX process involved user research, wireframing, prototyping in Figma, and usability testing.</p>
+        </div>
+
+        <div class="card">
+            <h3>COVID-19 Data Dashboard</h3>
+            <p>Built a dashboard using Python libraries (Pandas, Matplotlib) to visualize COVID-19 global trends. Included charts for cases, deaths, and recoveries over time.</p>
+        </div>
+
+        <div class="card">
+            <h3>Hospital Management System</h3>
+            <p>Created a full-stack application using Flask and MySQL. Implemented patient records, appointment management, and role-based access with a user-friendly UI.</p>
+        </div>
+
+        <div class="card">
+            <h3>IMDb Movie Recommendation System</h3>
+            <p>Developed a content-based recommendation engine using Python and Flask. Users can search for movies, get suggestions, and view IMDb ratings.</p>
+        </div>
+
+        <div class="card">
+            <h3>CPU Scheduling Simulator</h3>
+            <p>Implemented simulations for CPU scheduling algorithms (FCFS, SJF, Round Robin, Priority) with interactive graphs using Plotly and Flask backend.</p>
+        </div>
+
+        <div class="card">
+            <h3>IoT Smart Home App</h3>
+            <p>Designed and built a smart home control app using Flutter and Firebase. Enabled real-time monitoring and control of devices via MQTT and ESP32.</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>contact</h2>
+        <div class="card">
+            <p><strong>Email:</strong> 
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Ranimmoustafa63@gmail.com" 
+     target="_blank" 
+     style="color: #a200ff; text-decoration: none;">
+    Ranimmoustafa63@gmail.com
+  </a>
+</p>
+            <p><strong>Phone:</strong> +20 155 355 3977</p>
+            <p><strong>Location:</strong> Alexandria, Egypt</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ranim-badawy-a053a1294/" target="_blank" style="color: #a200ff; text-decoration: none;">ranim-moustafa</a></p>
+        </div>
+    </section>
+    <footer>
+  <p style="font-size: 0.95em;"><strong>Thanks for visiting my portfolio 💜</strong></p>
+</footer>
+</body>
+</html>
