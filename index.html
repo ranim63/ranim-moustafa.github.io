@@ -1,213 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ranim Moustafa | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Montserrat', sans-serif; background: #0f0f1a; color: #ffffff; line-height: 1.6; }
-        nav { background: #1f1f2e; padding: 1em 2em; display: flex; justify-content: space-between; position: fixed; width: 100%; z-index: 10; }
-        nav a { color: #00d1d1; text-decoration: none; margin: 0 15px; font-weight: bold; transition: 0.3s; }
-        nav a:hover { color: #a200ff; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranim Moustafa | Portfolio</title>
 
-        header {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(to right, #6e00ff, #00e1e1);
-            text-align: center;
-            flex-direction: column;
-            padding: 20px;
-            position: relative;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
-        header img.profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
+<style>
+:root{
+  --bg:#030322;
+  --card:rgba(255,255,255,0.05);
+  --primary:#9d4edd;
+  --accent:#00f5d4;
+  --h:#9d4edd;
+  --text:#ffffff;
+  --text-soft:#cfcfcf;
+}
 
-        header h1 {
-            font-size: 3em;
-            color: #fff;
-        }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-        header p {
-            font-size: 1.2em;
-            margin-top: 1em;
-            color: #eee;
-            max-width: 600px;
-        }
+body{
+  font-family:'Montserrat',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-        .cv-button {
-            margin-top: 2em;
-            padding: 12px 24px;
-            background-color: #a200ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
 
-        .cv-button:hover {
-            background-color: #a200ff;
-        }
+.logo{
+  font-weight:700;
+}
 
-        section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-        h2 { font-size: 2em; margin-bottom: 20px; color: #a200ff; text-align: center; }
-        .card { background: #1c1c2c; padding: 20px; border-radius: 10px; margin: 20px 0; box-shadow: 0 0 15px rgba(0,0,0,0.3); }
-        .card h3 { color: #a200ff; margin-bottom: 10px; }
-        .card p { color: #ccc; }
+.nav-links{
+  display:flex;
+  gap:25px;
+}
 
-        footer { background: #1a1a27; text-align: center; padding: 30px; font-size: 0.9em; color: #aaa; }
-        form {
-      display: flex;
-      flex-direction: column;
-    }
+.nav-links a{
+  text-decoration:none;
+  color:var(--accent);
+  transition:0.3s;
+}
 
-    form input,
-    form textarea {
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: none;
-      font-size: 1em;
-    }
+.nav-links a:hover{
+  color:var(--primary);
+}
 
-    form button {
-      padding: 10px;
-      background-color: #a200ff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.menu-toggle{
+  display:none;
+  font-size:1.8em;
+  cursor:pointer;
+}
 
-    form button:hover {
-      background-color: #a200ff;
-    }
-    </style>
+/* ================= HERO SECTION ================= */
+header{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:100px 20px 20px 20px;
+  position:relative;
+  background:linear-gradient(135deg,#1e1e2f,#3a0ca3,#7209b7);
+  overflow:hidden;
+}
+
+header::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,rgba(0,245,212,0.4),transparent 70%);
+  top:-150px;
+  right:-150px;
+  animation:heroGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow{
+  from{transform:scale(1);}
+  to{transform:scale(1.2);}
+}
+
+header *{
+  position:relative;
+  z-index:2;
+}
+
+.profile-pic{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  border:4px solid white;
+  margin-bottom:20px;
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+header h1{
+  font-size:2.8em;
+}
+
+header h2{
+  font-weight:400;
+  margin-top:10px;
+  opacity:0.9;
+}
+
+/* ================= HERO BUTTONS ================= */
+header .hero-buttons{
+  display:flex;             
+  justify-content:center;   
+  gap:20px;                 
+  margin-top:25px;
+  flex-direction:row;       
+  flex-wrap:wrap;           
+}
+
+header .hero-buttons a{
+  min-width:180px;           
+  height:50px;               
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+/* زرار CV */
+header .cv-button{
+  background:var(--accent);
+  color:black;
+}
+
+header .cv-button:hover{
+  background:var(--primary);
+  color:white;
+}
+
+/* زرار Projects stroked */
+header .projects-button{
+  background:transparent;
+  color:var(--accent);
+  border:2px solid var(--accent);
+}
+
+header .projects-button:hover{
+  background:#9d4edd; 
+  color:white;
+  border-color:#9d4edd;
+}
+
+/* ================= UNIFORM SECTIONS STYLE ================= */
+section:not(#cover){
+  padding:90px 20px;
+  background:#010126;
+}
+
+.section-container{
+  max-width:1300px;
+  margin:auto;
+  text-align:left;
+}
+
+section h2{
+  font-size:2.2em;
+  text-align:center;
+  margin-bottom:50px;
+  position:relative;
+}
+
+section h2::after{
+  content:"";
+  width:70px;
+  height:3px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  display:block;
+  margin:12px auto 0;
+  border-radius:5px;
+}
+
+/* Section Box */
+.section-box{
+  background:rgba(255,255,255,0.05);
+  padding:40px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.5);
+  opacity:0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.section-box.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.section-box p, .section-box li{
+  line-height:1.9;
+  margin-bottom:20px;
+  color:#e0e0e0;
+  font-size:1.05em;
+}
+
+.section-box strong{
+  color:var(--h);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  margin-top:30px;
+}
+
+/* Cards */
+.card{
+  background:#1e1e39;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 45px rgba(0,0,0,0.6);
+}
+
+.card h3{
+  margin-bottom:15px;
+  color:var(--accent);
+}
+
+.card p{
+  margin-bottom:0;
+  line-height:1.7;
+  color:#dcdcdc;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:30px;
+  background:rgba(0,0,0,0.5);
+  color:var(--text-soft);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  nav{
+    padding:15px 20px;
+  }
+  .menu-toggle{
+    display:block;
+  }
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    width:100%;
+    flex-direction:column;
+    background:rgba(0,0,0,0.95);
+    text-align:center;
+    padding:20px 0;
+    display:none;
+  }
+  .nav-links a{
+    padding:12px 0;
+  }
+  .nav-links.active{
+    display:flex;
+  }
+  header h1{
+    font-size:1.9em;
+  }
+  header h2{
+    font-size:1em;
+  }
+  .profile-pic{
+    width:130px;
+    height:130px;
+  }
+
+  /* الزرين responsive */
+  header .hero-buttons{
+    flex-direction:column;
+    gap:15px;
+  }
+  header .hero-buttons a{
+    width:100%;
+  }
+
+  section:not(#cover){
+    padding:70px 15px;
+  }
+  .section-box{
+    padding:25px;
+  }
+  .section-box p, .section-box li{
+    font-size:0.95em;
+  }
+  .grid{
+    gap:20px;
+  }
+}
+#internships .card {
+  width: 100%;        /* الكارد ياخد كل عرض السكشن */
+  margin-bottom: 25px; /* المسافة بين الكاردين */
+}
+</style>
 </head>
 <body>
-    <nav>
-        <div><strong>Ranim Moustafa</strong></div>
-        <div>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#Offered Services">Offered Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
 
-    <header>
-        <!-- ✅ Add your image here -->
-        <img src="3.jpg" alt="Ranim Moustafa" class="profile-pic" />
-        
-        <h1>👩‍💻 Ranim Moustafa</h1>
-        <h2>UI/UX Designer | Web Developer | Data Scientist</h2>
-        <p>Creative mind solving real-world problems through clean design & intelligent systems 💻✨</p>
-        <a href="Ranim Moustafa Resume.pdf" download class="cv-button">Download CV</a>
-    </header>
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Ranim Moustafa</div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+  <div class="nav-links" id="nav-links">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#internships">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-    <section id="about">
-        <h2>About</h2>
-        <div class="card">
-            <p>Creative UI/UX designer and web developer with a strong foundation in data science and AI. Experienced in building full-stack applications and designing intuitive, user-friendly interfaces. Passionate about solving real-world problems through clean design, interactive dashboards, and automation tools.</p>
-        </div>
-    </section>
+<!-- COVER -->
+<header>
+  <img src="3.jpg" class="profile-pic">
+  <h1>Ranim Moustafa</h1>
+  <h2 style="color:#00f5d4;font-weight: 1000;">UI/UX Designer</h2>
+  <p style="margin-top:15px;">Creative mind solving real-world problems through clean design & intelligent systems</p>
+  
+  <!-- الزرين -->
+  <div class="hero-buttons">
+    <a href="Ranim Moustafa Resume.pdf" download class="cv-button">Download CV</a>
+    <a href="#projects" class="projects-button">View My Projects</a>
+  </div>
+</header>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="card">
-            <h3>Alexandria University</h3>
-            <p>Bachelor's Degree in Computing & Data Sciences</p>
-            <p><strong>GPA:</strong> 3.735 | Sep 2021 - Present</p>
-        </div>
-    </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="card">
-            <p><strong style="color: #a200ff;">UI/UX Design:</strong> Figma, Wireframing, Prototyping, User Research, Personas, Empathy Maps,Design Systems, Interactive Components, Usability Testing, Mobile-first & Responsive Design</p>
-            <p><strong style="color: #a200ff;">Web Development:</strong> Frontend: HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, React (beginner), Flutter,Backend: Flask, Firebase, XAMPP, Databases: MySQL, MongoDB</p>
-            <p><strong style="color: #a200ff;">Data & AI:</strong> Python, SQL, scikit-learn, TensorFlow, NLP, XGBoost, Pandas, NumPy, Matplotlib, OpenAI APIs.</p>
-            <p><strong style="color: #a200ff;">Visualization:</strong> Streamlit, Dash, Plotly, Tableau.</p>
-        </div>
-    </section>
-    <section id="skills">
-        <h2>Soft Skills</h2>
-        <div class="card">
-            <p><strong>Problem Solving, UI/UX Thinking, Time Management, Team Collaboration, Fast Learner, Attention to Detail</strong></p>
-        </div>
-    </section>
-    <section id="Offered Services">
-        <h2>Offered Services</h2>
-        <div class="card">
-            <p><strong>UI/UX Design for mobile/web apps</strong></p>
-            <p><strong>Full-Stack Web Development</strong></p>
-            <p><strong>Data Visualization Dashboards</strong></p>
-        </div>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-container" style="max-width:1000px;">
+    <h2>About Me</h2>
+    <div class="section-box">
+      <p>I am a UX/UI Designer with a strong analytical background and hands-on experience gained over the past six months working on real-world projects. I am passionate about turning ideas into clear, effective digital experiences that solve practical problems through thoughtful, user-centered design.</p>
 
+      <p>I believe design is more than visual appeal — it is a strategic tool for simplifying complexity and improving performance. By deeply understanding business needs and user behavior, I transform complex systems into intuitive, easy-to-use interfaces that enhance efficiency and increase user satisfaction.</p>
+
+      <p>My goal is to help small and growing businesses build digital products that feel seamless, purposeful, and genuinely valuable to their users.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-container" style="max-width:1000px;">
+    <h2>Education</h2>
+    <div class="section-box">
+          <h3><strong>Alexandria University</strong></h3>
+          <p>Bachelor's Degree in Computing & Data Sciences</p>
+          <p><strong>GPA:</strong> 3.75 | Sep 2022 - Present</p>
+    </div>
+  </div>
+</section>
+<section id="internships">
+  <div class="section-container" style="max-width:1000px;">
+    <h2>Internships Experience</h2>
+    <div class="section-box">
+      <!-- Internship 1 -->
+      <div class="card" style="padding:50px;">
+        <h3 style="color:#dcdcdc;">UI/UX Web Design Intern (Digital Arts Track)</h3>
+        <p><strong>Digital Egypt Pioneers Initiative (DEPI) | Nov 2025 – Present</strong></p>
+        <ul>
+          <li>Design user-centered web and app interfaces following UI/UX best practices.</li>
+          <li>Conduct user research and translate insights into information architecture and user flows.</li>
+          <li>Create wireframes and high-fidelity prototypes using Figma.</li>
+          <li>Apply usability principles to improve navigation, accessibility, and interaction design.</li>
+          <li>Collaborate with designers and developers to transform ideas into functional digital products.</li>
+          <li>Leverage AI-powered tools to enhance design efficiency and user experience.</li>
+        </ul>
+      </div>
+
+      <!-- Internship 2 -->
+      <div class="card" style="padding:50px;">
+        <h3 style="color:#dcdcdc;">UI/UX Design Intern</h3>
+        <p><strong>National Telecommunication Institute (NTI) & ITIDA | Jul 2025 – Aug 2025</strong></p>
+        <ul>
+          <li>Conducted user research and applied UX principles in design projects.</li>
+          <li>Designed mobile and web interfaces using Figma, including wireframes and prototypes.</li>
+          <li>Created personas, empathy maps, and user journeys to guide design decisions.</li>
+          <li>Applied usability testing techniques to improve user experience and design quality.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-container">
+    <h2>Skills</h2>
+    <div class="section-box">
+      <div class="grid">
         <div class="card">
-            <h3>Animal Rescue App – UI/UX Design</h3>
-            <p>Designed a mobile application for organizing animal rescue volunteers and pet adoption. Created wireframes, highfidelity prototypes, and interactive components in Figma. Conducted user interviews and developed empathy maps and personas to ensure user needs were addressed.</p>
+          <h3>Technical Skills</h3>
+          <p>Figma, Wireframing, Prototyping, User Research, Personas, Empathy Maps, Usability Testing.</p>
+        </div>
+        <div class="card">
+          <h3>Soft Skills</h3>
+          <p>Problem Solving, Design Thinking, Time Management, Team Collaboration, Fast Learner, Attention to Detail.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-container">
+    <h2>Services</h2>
+    <div class="section-box">
+      <div class="grid">
+        <div class="card">
+          <h3>UX Research</h3>
+          <p>User research, analysis, and user flows to improve experiences.</p>
+        </div>
+        <div class="card">
+          <h3>UI Design</h3>
+          <p>Modern and user-centered interfaces for web & mobile apps.</p>
+        </div>
+        <div class="card">
+          <h3>Prototyping & Testing</h3>
+          <p>Interactive prototypes and usability testing for better products.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="padding:120px 20px;"> 
+  <div class="section-container">
+    <h2>Projects</h2>
+    <div class="section-box">
+
+      <div class="grid">
+
+        <!-- Project 1 -->
+        <div class="card project-card">
+          <div class="project-image" style="background-image:url('ررررر.jpg');"></div>
+          <h3>Integrated HR Services Platform</h3>
+          <p><strong>Duration:</strong> Nov 2025 – Dec 2025</p>
+          <p><strong>Description:</strong> Designed a comprehensive HR services interface for an integrated HR platform project focused on improving efficiency in core HR operations. Conducted UX research and created user flows, wireframes, and high-fidelity UI screens using Figma to ensure a user-centric experience. Applied usability testing and iterative feedback to refine components and optimize the HR dashboard and interaction patterns.</p>
+          <p><strong>Tools:</strong> Figma, Google Form, Pinterest, Unsplash, Google Meet</p>
+          <a href="https://www.behance.net/gallery/240226777/Heikala-is-an-integrated-HR-services-platform/modules/1383867429" target="_blank" class="project-btn">View Project</a>
         </div>
 
-        <div class="card">
-            <h3>COVID-19 Data Dashboard</h3>
-            <p>Created an interactive visualization dashboard using Pandas and Matplotlib to display global COVID-19 trends and time-series analysis.</p>
+        <!-- Project 2 -->
+        <div class="card project-card">
+          <div class="project-image" style="background-image:url('COVER.jpg');"></div>
+          <h3>Animal Rescue App</h3>
+          <p><strong>Duration:</strong> Jul 2025 – Aug 2025</p>
+          <p><strong>Description:</strong> Designed a mobile application for organizing animal rescue volunteers and pet adoption. Created wireframes, high-fidelity prototypes, and interactive components in Figma. Conducted user interviews and developed empathy maps and personas to ensure user needs were addressed.</p>
+          <p><strong>Tools:</strong> Figma, Google Form, Pinterest</p>
+          <a href="https://www.behance.net/gallery/231674729/animal-safety/modules/1328789213" target="_blank" class="project-btn">View Project</a>
         </div>
 
-        <div class="card">
-            <h3>Hospital Management System</h3>
-            <p>Developed a complete admin panel with Flask, MySQL, and XAMPP. Included features like user roles, secure login, appointment scheduling, and complaint management with responsive UI.</p>
-        </div>
+      </div>
 
-        <div class="card">
-            <h3>IMDb Movie Recommendation System</h3>
-            <p>Flask-based movie app with MongoDB backend, supporting search, rating prediction, and personalized suggestions. Features include CRUD operations and interactive data visualizations.</p>
-        </div>
+    </div>
+  </div>
+</section>
 
-        <div class="card">
-            <h3>CPU Scheduling Simulator</h3>
-            <p>Built an interactive simulation tool in Flask for FCFS, SJF, Round Robin, and Priority scheduling, with real-timeperformance charts via Plotly</p>
-        </div>
+<style>
+/* Grid layout for Projects */
+.section-box .grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
 
+/* Project Image */
+.project-image{
+  width:100%;
+  padding-top:56.25%;
+  background-size:cover;
+  background-position:center;
+  border-radius:15px;
+  margin-bottom:15px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Card Hover Animation */
+.project-card:hover .project-image{
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* Scroll Animation */
+.project-card{
+  opacity:0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.project-card.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Project Button */
+.project-btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background: #00f5d4;
+  color: #1a1a27;
+  font-weight:700;
+  border-radius:8px;
+  text-decoration:none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.project-btn:hover{
+  background: #6e00ff;
+  color: #fff;
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+// Scroll Animation for Projects
+const projectCards = document.querySelectorAll('.project-card');
+function showProjectCards(){
+  const triggerBottom = window.innerHeight * 0.85;
+  projectCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    if(cardTop < triggerBottom){card.classList.add('show');}
+    else{card.classList.remove('show');}
+  });
+}
+window.addEventListener('scroll', showProjectCards);
+showProjectCards();
+</script>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-container"  style="max-width:1000px;">
+    <h2>Contact</h2>
+    <div class="section-box">
+      <div class="grid">
         <div class="card">
-            <h3>IoT Smart Home App</h3>
-            <p>Flutter-based mobile app for real-time control of home appliances using ESP32 and Firebase. MQTT protocol used for device communication.</p>
+          <h3 style="color:#dcdcdc;">Email</h3>
+          <p><a href="mailto:Ranimmoustafa63@gmail.com" style="color:#9d4edd; text-decoration:none;">Ranimmoustafa63@gmail.com</a></p>
         </div>
-    </section>
-    <section id="contact">
-        <h2>contact</h2>
         <div class="card">
-            <p><strong>Email:</strong> 
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Ranimmoustafa63@gmail.com" 
-     target="_blank" 
-     style="color: #a200ff; text-decoration: none;">
-    Ranimmoustafa63@gmail.com
-  </a>
-</p>
-            <p><strong>Phone:</strong> +20 155 355 3977</p>
-            <p><strong>Location:</strong> Alexandria, Egypt</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ranim-badawy-a053a1294/" target="_blank" style="color: #a200ff; text-decoration: none;">ranim-moustafa</a></p>
+          <h3 style="color:#dcdcdc;">Phone</h3>
+          <p style="color:#9d4edd;">+20 155 355 3977</p>
         </div>
-    </section>
-    <footer>
-  <p style="font-size: 0.95em;"><strong>Thanks for visiting my portfolio 💜</strong></p>
+        <div class="card">
+          <h3 style="color:#dcdcdc;">LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/ranim-badawy-a053a1294/" target="_blank" style="color:#9d4edd; text-decoration:none;">ranim-moustafa</a></p>
+        </div>
+        <div class="card">
+          <h3 style="color:#dcdcdc;">Behance</h3>
+          <p><a href="https://www.behance.net/ranimbadawy" target="_blank" style="color:#9d4edd; text-decoration:none;">View Portfolio</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+<p>Thanks for visiting my portfolio 💜</p>
 </footer>
+
+<!-- JS -->
+<script>
+/* NAV TOGGLE */
+const toggle=document.getElementById("menu-toggle");
+const navLinks=document.getElementById("nav-links");
+toggle.addEventListener("click",()=>{navLinks.classList.toggle("active");});
+
+/* Scroll Animation */
+const boxes = document.querySelectorAll('.section-box');
+function checkBoxes() {
+  const triggerBottom = window.innerHeight * 0.85;
+  boxes.forEach(box => {
+    const boxTop = box.getBoundingClientRect().top;
+    if(boxTop < triggerBottom){box.classList.add('show');}
+    else{box.classList.remove('show');}
+  });
+}
+window.addEventListener('scroll', checkBoxes);
+checkBoxes();
+</script>
+
 </body>
 </html>
