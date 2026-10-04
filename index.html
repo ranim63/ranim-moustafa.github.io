@@ -220,7 +220,7 @@ section h2::after{
   backdrop-filter:blur(12px);
   box-shadow:0 15px 40px rgba(0,0,0,0.5);
   opacity:0;
-  transform: translateY(40px);
+  transform: translateY(-30px);
   transition: all 0.8s ease-out;
 }
 
@@ -342,6 +342,16 @@ footer{
   width: 100%;        /* الكارد ياخد كل عرض السكشن */
   margin-bottom: 25px; /* المسافة بين الكاردين */
 }
+
+#services .grid {
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+}
+
+@media(max-width:768px){
+  #services .grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
@@ -365,9 +375,9 @@ footer{
 <header>
   <img src="3.jpg" class="profile-pic">
   <h1>Ranim Moustafa</h1>
-  <h2 style="color:#00f5d4;font-weight: 1000;">UI/UX Designer</h2>
-  <p style="margin-top:15px;">Creative mind solving real-world problems through clean design & intelligent systems</p>
-  
+  <h2 style="color:#00f5d4;font-weight: 1000;">UI / UX DESIGNER</h2>
+  <p style="margin-top:15px;">Creative mind solving real-world problems through clean design &amp; intelligent systems</p>
+
   <!-- الزرين -->
   <div class="hero-buttons">
     <a href="Ranim Moustafa Resume.pdf" download class="cv-button">Download CV</a>
@@ -381,7 +391,7 @@ footer{
   <div class="section-container" style="max-width:1000px;">
     <h2>About Me</h2>
     <div class="section-box">
-      <p>I am a UX/UI Designer with a strong analytical background and hands-on experience gained over the past six months working on real-world projects. I am passionate about turning ideas into clear, effective digital experiences that solve practical problems through thoughtful, user-centered design.</p>
+      <p>I am a UX/UI Designer with a strong analytical background and hands-on experience gained over the past one year working on real-world projects. I am passionate about turning ideas into clear, effective digital experiences that solve practical problems through thoughtful, user-centered design.</p>
 
       <p>I believe design is more than visual appeal — it is a strategic tool for simplifying complexity and improving performance. By deeply understanding business needs and user behavior, I transform complex systems into intuitive, easy-to-use interfaces that enhance efficiency and increase user satisfaction.</p>
 
@@ -397,18 +407,18 @@ footer{
     <div class="section-box">
           <h3><strong>Alexandria University</strong></h3>
           <p>Bachelor's Degree in Computing & Data Sciences</p>
-          <p><strong>GPA:</strong> 3.75 | Sep 2022 - Present</p>
+          <p><strong>GPA:</strong> 3.757 | Sep 2022 - Jul 2026</p>
     </div>
   </div>
 </section>
 <section id="internships">
   <div class="section-container" style="max-width:1000px;">
-    <h2>Internship Experience</h2>
+    <h2>Experience</h2>
     <div class="section-box">
-      <!-- Internship 1 -->
       <div class="card" style="padding:50px;">
         <h3 style="color:#dcdcdc;">UI/UX Web Design Intern (Digital Arts Track)</h3>
-        <p><strong>Digital Egypt Pioneers Initiative (DEPI) | Nov 2025 – Present</strong></p>
+        <p><strong>Digital Egypt Pioneers Initiative (DEPI)</strong></p>
+        <p><strong>Nov 2025 – Jul 2026</strong></p>
         <ul>
           <li>Design user-centered web and app interfaces following UI/UX best practices.</li>
           <li>Conduct user research and translate insights into information architecture and user flows.</li>
@@ -417,18 +427,20 @@ footer{
           <li>Collaborate with designers and developers to transform ideas into functional digital products.</li>
           <li>Leverage AI-powered tools to enhance design efficiency and user experience.</li>
         </ul>
+        <a href="https://drive.google.com/file/d/1n7JQEKW_U22X9KAo9E0jUU_cDpW9Yk09/view?usp=drive_link" target="_blank" class="certificate-btn">View Certificate</a>
       </div>
 
-      <!-- Internship 2 -->
       <div class="card" style="padding:50px;">
         <h3 style="color:#dcdcdc;">UI/UX Design Intern</h3>
-        <p><strong>National Telecommunication Institute (NTI) & ITIDA | Jul 2025 – Aug 2025</strong></p>
+        <p><strong>National Telecommunication Institute (NTI) & ITIDA</strong></p>
+        <p><strong>Jul 2025 – Aug 2025</strong></p>
         <ul>
           <li>Conducted user research and applied UX principles in design projects.</li>
           <li>Designed mobile and web interfaces using Figma, including wireframes and prototypes.</li>
           <li>Created personas, empathy maps, and user journeys to guide design decisions.</li>
           <li>Applied usability testing techniques to improve user experience and design quality.</li>
         </ul>
+        <a href="https://drive.google.com/file/d/1czSxktyC3uI2Xz4bbHv4NZkqfodSisvZ/view?usp=drive_link" target="_blank" class="certificate-btn">View Certificate</a>
       </div>
     </div>
   </div>
@@ -481,31 +493,44 @@ footer{
   <div class="section-container">
     <h2>Projects</h2>
     <div class="section-box">
-
       <div class="grid">
 
-        <!-- Project 1 -->
         <div class="card project-card">
-          <div class="project-image" style="background-image:url('ررررر.jpg');"></div>
-          <h3>Integrated HR Services Platform</h3>
-          <p><strong>Duration:</strong> Nov 2025 – Dec 2025</p>
-          <p><strong>Description:</strong> Designed a comprehensive HR services interface for an integrated HR platform project focused on improving efficiency in core HR operations. Conducted UX research and created user flows, wireframes, and high-fidelity UI screens using Figma to ensure a user-centric experience. Applied usability testing and iterative feedback to refine components and optimize the HR dashboard and interaction patterns.</p>
-          <p><strong>Tools:</strong> Figma, Google Form, Pinterest, Unsplash, Google Meet</p>
-          <a href="https://www.behance.net/gallery/240226777/Heikala-is-an-integrated-HR-services-platform/modules/1383867429" target="_blank" class="project-btn">View Project</a>
+          <div class="project-image" style="background-image:url('Case Study Cover.png');"></div>
+          <h3>Drivo – Car Rental Mobile Application</h3>
+          <p><strong>Duration:</strong> Mar 2026 – Jul 2026</p>
+          <p>Designed a mobile car rental application that simplifies the booking experience for renters and car owners. Focused on creating a clear and transparent user journey, including personalized car suggestions, detailed pricing, digital booking, ID upload, contract summary, and online payment.</p>
+          <p><strong>Tools:</strong> Figma, Google Forms, Adobe Photoshop, Adobe Illustrator, Google Gemini, Google Meet</p>
+          <a href="https://www.behance.net/gallery/253719547/Drivo-Smart-Car-Rental-Mobile-App" target="_blank" class="project-btn">Behance Link</a>
         </div>
 
-        <!-- Project 2 -->
+        <div class="card project-card">
+          <div class="project-image" style="background-image:url('Desktop.png');"></div>
+          <h3>Growza – AI-Powered Career Development Mobile Application</h3>
+          <p><strong>Duration:</strong> Sep 2025 – Jan 2026</p>
+          <p>Designed an AI-powered career development mobile application that helps users identify skill gaps and build personalized career paths. The platform includes personalized learning roadmaps, real-time job market insights, AI-powered mock interviews, a no-code portfolio builder, intelligent job matching, and CV optimization.</p>
+          <p><strong>Tools:</strong> Figma, Google Forms, Pinterest, Google Meet</p>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-image" style="background-image:url('ررررر.jpg');"></div>
+          <h3>هيكلة – Integrated HR Services Platform</h3>
+          <p><strong>Duration:</strong> Nov 2025 – Dec 2025</p>
+          <p>Designed a comprehensive HR services interface for an integrated HR platform project focused on improving efficiency in core HR operations. Conducted UX research and created user flows, wireframes, and high-fidelity UI screens using Figma to ensure a user-centric experience. Applied usability testing and iterative feedback to refine components and optimize the HR dashboard and interaction patterns.</p>
+          <p><strong>Tools:</strong> Figma, Google Form, Pinterest, Unsplash, Google Meet</p>
+          <a href="https://www.behance.net/gallery/240226777/Heikala-is-an-integrated-HR-services-platform/modules/1383867429" target="_blank" class="project-btn">Behance Link</a>
+        </div>
+
         <div class="card project-card">
           <div class="project-image" style="background-image:url('COVER.jpg');"></div>
           <h3>Animal Rescue App</h3>
           <p><strong>Duration:</strong> Jul 2025 – Aug 2025</p>
-          <p><strong>Description:</strong> Designed a mobile application for organizing animal rescue volunteers and pet adoption. Created wireframes, high-fidelity prototypes, and interactive components in Figma. Conducted user interviews and developed empathy maps and personas to ensure user needs were addressed.</p>
-          <p><strong>Tools:</strong> Figma, Google Form, Pinterest</p>
-          <a href="https://www.behance.net/gallery/231674729/animal-safety/modules/1328789213" target="_blank" class="project-btn">View Project</a>
+          <p>Designed a mobile application for organizing animal rescue volunteers and pet adoption. Created wireframes, high-fidelity prototypes, and interactive components in Figma. Conducted user interviews and developed empathy maps and personas to ensure user needs were addressed.</p>
+          <p><strong>Tools:</strong> Figma, Google Forms, Pinterest</p>
+          <a href="https://www.behance.net/gallery/231674729/animal-safety/modules/1328789213" target="_blank" class="project-btn">Behance Link</a>
         </div>
 
       </div>
-
     </div>
   </div>
 </section>
@@ -514,8 +539,14 @@ footer{
 /* Grid layout for Projects */
 .section-box .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:repeat(2,minmax(300px,1fr));
   gap:30px;
+}
+
+@media(max-width:768px){
+  .section-box .grid{
+    grid-template-columns:1fr;
+  }
 }
 
 /* Project Image */
@@ -538,7 +569,7 @@ footer{
 /* Scroll Animation */
 .project-card{
   opacity:0;
-  transform: translateY(40px);
+  transform: translateY(-30px);
   transition: all 0.8s ease-out;
 }
 
@@ -547,41 +578,30 @@ footer{
   transform: translateY(0);
 }
 
-/* Project Button */
-.project-btn{
-  display:inline-block;
+/* Unified Action Buttons */
+.project-btn,
+.certificate-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   margin-top:15px;
   padding:10px 20px;
-  background: #00f5d4;
+  min-height:44px;
+  background: var(--accent);
   color: #1a1a27;
   font-weight:700;
-  border-radius:8px;
+  border-radius:30px;
   text-decoration:none;
-  transition: background 0.3s, transform 0.3s;
+  transition: background 0.3s, transform 0.3s, color 0.3s;
 }
 
-.project-btn:hover{
-  background: #6e00ff;
+.project-btn:hover,
+.certificate-btn:hover{
+  background: var(--primary);
   color: #fff;
-  transform: scale(1.05);
+  transform: translateY(-2px);
 }
 </style>
-
-<script>
-// Scroll Animation for Projects
-const projectCards = document.querySelectorAll('.project-card');
-function showProjectCards(){
-  const triggerBottom = window.innerHeight * 0.85;
-  projectCards.forEach(card => {
-    const cardTop = card.getBoundingClientRect().top;
-    if(cardTop < triggerBottom){card.classList.add('show');}
-    else{card.classList.remove('show');}
-  });
-}
-window.addEventListener('scroll', showProjectCards);
-showProjectCards();
-</script>
-
 
 <!-- CONTACT -->
 <section id="contact">
@@ -621,18 +641,19 @@ const toggle=document.getElementById("menu-toggle");
 const navLinks=document.getElementById("nav-links");
 toggle.addEventListener("click",()=>{navLinks.classList.toggle("active");});
 
-/* Scroll Animation */
-const boxes = document.querySelectorAll('.section-box');
-function checkBoxes() {
-  const triggerBottom = window.innerHeight * 0.85;
-  boxes.forEach(box => {
-    const boxTop = box.getBoundingClientRect().top;
-    if(boxTop < triggerBottom){box.classList.add('show');}
-    else{box.classList.remove('show');}
+/* Reveal animation from top when entering viewport */
+const revealItems = document.querySelectorAll('.section-box, .project-card');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
   });
-}
-window.addEventListener('scroll', checkBoxes);
-checkBoxes();
+}, { threshold: 0.2 });
+
+revealItems.forEach(item => revealObserver.observe(item));
 </script>
 
 </body>
